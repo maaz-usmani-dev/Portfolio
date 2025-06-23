@@ -1,0 +1,150 @@
+export const shopifyProjects = [
+  {
+    id: 1,
+    title: "Eizer Ecommerce",
+    description:
+      "A fully custom Shopify theme built from scratch featuring advanced product filtering, wishlist functionality, and seamless user experience with modern design patterns.",
+    technologies: ["Shopify Liquid", "Tailwind CSS", "Search & Discovery App", "JavaScript"],
+    liveUrl: "https://eizer-1.myshopify.com",
+    codeUrl: "https://github.com/maaz-usmani-dev/EizerTheme",
+    hasLiveDemo: true,
+    hasCode: true,
+    category: "Theme Development",
+    featured: true,
+  },
+  {
+    id: 2,
+    title: "Platform Migration Solution",
+    description:
+      "Successfully migrated complete e-commerce data including products, customers, and order history from legacy platform to Shopify with zero data loss.",
+    technologies: ["Matrixify App", "Data Migration", "Shopify Admin API", "CSV Processing"],
+    liveUrl: "#",
+    codeUrl: "#",
+    hasLiveDemo: false,
+    hasCode: false,
+    category: "Data Migration",
+    featured: false,
+  },
+  {
+    id: 3,
+    title: "Multi-Platform Reviews System",
+    description:
+      "Implemented comprehensive product review systems using multiple review platforms, enabling verified customer reviews, photo uploads, and advanced review management.",
+    technologies: ["Doran App", "Okendo App", "Judge.me App", "Shopify Dawn Theme", "Liquid Templates"],
+    liveUrl: "#",
+    codeUrl: "#",
+    hasLiveDemo: false,
+    hasCode: false,
+    category: "App Integration",
+    featured: true,
+  },
+  {
+    id: 4,
+    title: "Checkout Upsell Extension",
+    description:
+      "Developed a smart checkout extension that recommends similar products during the checkout process, increasing average order value by 25%.",
+    technologies: ["Shopify Liquid", "React.js", "GraphQL", "Checkout Extensions API"],
+    liveUrl: "#",
+    codeUrl: "https://github.com/maaz-usmani-dev/checkout-upsell",
+    hasLiveDemo: false,
+    hasCode: true,
+    category: "Conversion Optimization",
+    featured: false,
+  },
+  {
+    id: 5,
+    title: "Dynamic Mega Menu",
+    description:
+      "Created a fully dynamic and customizable mega menu system for Dawn theme with backend-driven content management and mobile-responsive design.",
+    technologies: ["Shopify Dawn Theme", "Liquid Templates", "Theme Customizer", "JavaScript"],
+    liveUrl: "#",
+    codeUrl: "#",
+    hasLiveDemo: false,
+    hasCode: false,
+    category: "Navigation",
+    featured: false,
+  },
+  {
+    id: 6,
+    title: "Email Marketing Automation",
+    description:
+      "Built comprehensive email marketing campaigns with automated flows, customer segmentation, and A/B testing to boost customer retention and sales.",
+    technologies: ["Klaviyo App", "Mailchimp App", "Shopify Flow", "Email Templates", "Customer Analytics"],
+    liveUrl: "#",
+    codeUrl: "#",
+    hasLiveDemo: false,
+    hasCode: false,
+    category: "Marketing Automation",
+    featured: true,
+  },
+  {
+    id: 7,
+    title: "Product Bundles & Upsells",
+    description:
+      "Implemented intelligent product bundling system with dynamic pricing, cross-sell recommendations, and discount management to increase average order value.",
+    technologies: ["Bundler App", "Honey Comb Upsell App", "Shopify Scripts", "Liquid Logic"],
+    liveUrl: "#",
+    codeUrl: "#",
+    hasLiveDemo: false,
+    hasCode: false,
+    category: "Sales Optimization",
+    featured: true,
+  },
+  {
+    id: 8,
+    title: "Advanced Product Options",
+    description:
+      "Created flexible product customization system allowing customers to personalize products with various options, add-ons, and conditional pricing.",
+    technologies: ["Easify Product Options App", "Custom JavaScript", "Shopify Variants API", "Dynamic Pricing"],
+    liveUrl: "#",
+    codeUrl: "#",
+    hasLiveDemo: false,
+    hasCode: false,
+    category: "Product Customization",
+    featured: false,
+  },
+  {
+    id: 9,
+    title: "Wix to Shopify Migration",
+    description:
+      "Complete migration of products, customer data, and reviews from Wix platform to Shopify, preserving SEO rankings and implementing enhanced review system with Judge.me integration.",
+    technologies: ["Matrixify App", "Judge.me App", "Wix Export Tools", "SEO Migration", "Review Migration"],
+    liveUrl: "#",
+    codeUrl: "#",
+    hasLiveDemo: false,
+    hasCode: false,
+    category: "Platform Migration",
+    featured: true,
+  },
+]
+
+export const frontendProjects = [
+  {
+    id: 10,
+    title: "Netflix UI Clone",
+    description:
+      "A pixel-perfect, responsive recreation of Netflix's user interface showcasing modern CSS techniques and interactive components.",
+    technologies: ["HTML5", "CSS3", "Responsive Design", "Flexbox/Grid"],
+    liveUrl: "https://netflix-ui-clone-zeta.vercel.app/",
+    codeUrl: "https://github.com/maaz-usmani-dev/Netflix-UI-Clone",
+    hasLiveDemo: true,
+    hasCode: true,
+    category: "UI Clone",
+    featured: true,
+  },
+  {
+    id: 11,
+    title: "Noble Hawk Campaign",
+    description:
+      "A sophisticated multi-page responsive website featuring smooth GSAP animations, modern React architecture, and optimized performance.",
+    technologies: ["React.js", "React Router DOM", "Tailwind CSS", "GSAP"],
+    liveUrl: "https://nhc-gamma.vercel.app/",
+    codeUrl: "https://github.com/maaz-usmani-dev/NHC",
+    hasLiveDemo: true,
+    hasCode: true,
+    category: "Web Application",
+    featured: true,
+  },
+]
+
+export type Project = (typeof shopifyProjects)[0]
