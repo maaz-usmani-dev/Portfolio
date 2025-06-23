@@ -162,7 +162,7 @@ const frontendProjects = [
     description:
       "A pixel-perfect, responsive recreation of Netflix's user interface showcasing modern CSS techniques and interactive components.",
     technologies: ["HTML5", "CSS3", "Responsive Design", "Flexbox/Grid"],
-    liveUrl: "https://netflix-ui-clone-zeta.vercel.app/",
+    liveUrl: "https://netflix-ui-clone-nu-ashy.vercel.app/",
     codeUrl: "https://github.com/maaz-usmani-dev/Netflix-UI-Clone",
     hasLiveDemo: true,
     hasCode: true,
