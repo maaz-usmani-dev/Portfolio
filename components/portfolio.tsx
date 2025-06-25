@@ -481,7 +481,7 @@ export function Portfolio() {
       project: (typeof shopifyProjects)[0] | (typeof frontendProjects)[0];
     }) => (
       <div
-        className="project-card bg-gradient-to-br from-gray-800/40 to-gray-900/40 rounded-xl overflow-hidden border border-orange-500/20 hover:border-orange-500/50 transition-all duration-300 group backdrop-blur-sm"
+        className="project-card bg-gradient-to-br from-gray-800/40 to-gray-900/40 rounded-xl overflow-hidden border border-orange-500/20 hover:border-orange-500/50 transition-all duration-300 group backdrop-blur-sm w-full h-[400px]"
         onMouseEnter={() => setHoveredProject(project.id)}
         onMouseLeave={() => setHoveredProject(null)}
       >
@@ -492,7 +492,7 @@ export function Portfolio() {
           </div>
         )}
 
-        <div className="h-32 sm:h-36 bg-gradient-to-br from-orange-500 via-red-500 to-yellow-500 flex items-center justify-center relative">
+        <div className="h-32 sm:h-36 bg-gradient-to-r from-orange-500 to-pink-500 flex items-center justify-center relative">
           <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300" />
           <span className="text-lg sm:text-xl font-bold relative z-10 text-white group-hover:scale-105 transition-transform duration-300">
             {project.title.split(" ")[0]}
@@ -510,7 +510,7 @@ export function Portfolio() {
           </div>
         </div>
 
-        <div className="p-4 sm:p-5">
+        <div className="p-4 sm:p-5 h-[calc(100%-128px)] flex flex-col justify-between">
           <div className="mb-3">
             <span className="inline-block px-2 py-1 bg-orange-500/10 text-orange-400 rounded-md text-xs font-medium border border-orange-500/20">
               {project.category}
@@ -555,9 +555,8 @@ export function Portfolio() {
                     Live Demo
                   </a>
                   {project.id === 1 && (
-                    <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-black border border-orange-400 text-orange-300 text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
-                      Use Password:{" "}
-                      <span className="font-semibold">lakreu</span>
+                    <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-black border border-orange-400 text-orange-300 text-xs px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
+                      Use Password: <span className="font-semibold">lakreu</span>
                     </div>
                   )}
                 </div>
@@ -606,10 +605,13 @@ export function Portfolio() {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="hover:text-orange-500 transition-colors duration-200 relative group py-2 text-sm lg:text-base"
+                className={`hover:text-orange-500 transition-colors duration-200 relative py-2 text-sm lg:text-base ${
+                  activeTab === item.toLowerCase()
+                    ? "border-b-2 border-orange-500"
+                    : ""
+                }`}
               >
                 {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-red-500 group-hover:w-full transition-all duration-200" />
               </a>
             ))}
           </div>
@@ -676,8 +678,8 @@ export function Portfolio() {
                 className="absolute bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/20 rounded-lg px-2 sm:px-3 py-1 sm:py-2 text-orange-400 font-mono text-xs sm:text-sm backdrop-blur-sm animate-float parallax"
                 data-speed={0.1}
                 style={{
-                  left: `${15 + ((index * 15) % 70)}%`,
-                  top: `${20 + ((index * 10) % 60)}%`,
+                  left: `${25 + ((index * 20) % 60)}%`, // Adjusted to move away from name
+                  top: `${30 + ((index * 15) % 50)}%`,
                   animationDelay: `${index * 0.5}s`,
                   animationDuration: `${3 + (index % 2)}s`,
                 }}
@@ -717,9 +719,7 @@ export function Portfolio() {
               }
               className="px-6 sm:px-8 py-3 bg-gradient-to-r from-orange-500 via-red-500 to-yellow-500 rounded-full font-semibold hover:from-orange-600 hover:via-red-600 hover:to-yellow-600 transition-all transform hover:scale-105 text-sm sm:text-base min-h-[48px] flex items-center justify-center group"
             >
-              <span className="group-hover:mr-2 transition-all">
-                View My Work
-              </span>
+              <span className="group-hover:mr-2 transition-all">View My Work</span>
               <Rocket className="w-4 h-4 ml-2 group-hover:rotate-12 transition-transform" />
             </button>
             <button
@@ -730,9 +730,7 @@ export function Portfolio() {
               }
               className="px-6 sm:px-8 py-3 border-2 border-orange-500 rounded-full font-semibold hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-500 hover:border-transparent transition-all transform hover:scale-105 text-sm sm:text-base min-h-[48px] flex items-center justify-center group"
             >
-              <span className="group-hover:mr-2 transition-all">
-                Get In Touch
-              </span>
+              <span className="group-hover:mr-2 transition-all">Get In Touch</span>
               <Heart className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform" />
             </button>
           </div>
