@@ -555,7 +555,7 @@ export function Portfolio() {
                     Live Demo
                   </a>
                   {project.id === 1 && (
-                    <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-black border border-orange-400 text-orange-300 text-xs px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
+                    <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap bg-black border border-orange-400 text-orange-300 text-xs px-4 py-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 pointer-events-none">
                       Use Password: <span className="font-semibold">lakreu</span>
                     </div>
                   )}
@@ -606,9 +606,7 @@ export function Portfolio() {
                 key={item}
                 href={`#${item.toLowerCase()}`}
                 className={`hover:text-orange-500 transition-colors duration-200 relative py-2 text-sm lg:text-base ${
-                  activeTab === item.toLowerCase()
-                    ? "border-b-2 border-orange-500"
-                    : ""
+                  activeTab === item.toLowerCase() ? "" : ""
                 }`}
               >
                 {item}
@@ -678,7 +676,7 @@ export function Portfolio() {
                 className="absolute bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/20 rounded-lg px-2 sm:px-3 py-1 sm:py-2 text-orange-400 font-mono text-xs sm:text-sm backdrop-blur-sm animate-float parallax"
                 data-speed={0.1}
                 style={{
-                  left: `${25 + ((index * 20) % 60)}%`, // Adjusted to move away from name
+                  left: `${25 + ((index * 20) % 60)}%`,
                   top: `${30 + ((index * 15) % 50)}%`,
                   animationDelay: `${index * 0.5}s`,
                   animationDuration: `${3 + (index % 2)}s`,
