@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { useEffect, useState, useCallback, useMemo } from "react"
-import dynamic from "next/dynamic"
+import { useEffect, useState, useCallback, useMemo } from "react";
+import dynamic from "next/dynamic";
 import {
   Zap,
   Palette,
@@ -19,20 +19,23 @@ import {
   Heart,
   Eye,
   TrendingUp,
-} from "lucide-react"
+} from "lucide-react";
 
 // Lazy load Skills3D component for better performance
-const Skills3D = dynamic(() => import("./skills-3d").then((mod) => ({ default: mod.Skills3D })), {
-  loading: () => (
-    <div className="w-full h-64 bg-gradient-to-b from-black via-gray-900 to-black flex items-center justify-center">
-      <div className="text-center">
-        <div className="w-8 h-8 border-2 border-orange-500 border-t-transparent rounded-full animate-spin mx-auto mb-2"></div>
-        <p className="text-gray-400 text-sm">Loading Skills...</p>
+const Skills3D = dynamic(
+  () => import("./skills-3d").then((mod) => ({ default: mod.Skills3D })),
+  {
+    loading: () => (
+      <div className="w-full h-64 bg-gradient-to-b from-black via-gray-900 to-black flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-8 h-8 border-2 border-orange-500 border-t-transparent rounded-full animate-spin mx-auto mb-2"></div>
+          <p className="text-gray-400 text-sm">Loading Skills...</p>
+        </div>
       </div>
-    </div>
-  ),
-  ssr: false,
-})
+    ),
+    ssr: false,
+  }
+);
 
 // Project data
 const shopifyProjects = [
@@ -41,7 +44,12 @@ const shopifyProjects = [
     title: "Eizer Ecommerce",
     description:
       "A fully custom Shopify theme built from scratch featuring advanced product filtering, wishlist functionality, and seamless user experience with modern design patterns.",
-    technologies: ["Shopify Liquid", "Tailwind CSS", "Search & Discovery App", "JavaScript"],
+    technologies: [
+      "Shopify Liquid",
+      "Tailwind CSS",
+      "Search & Discovery App",
+      "JavaScript",
+    ],
     liveUrl: "https://eizer-1.myshopify.com",
     codeUrl: "https://github.com/maaz-usmani-dev/EizerTheme",
     hasLiveDemo: true,
@@ -54,7 +62,12 @@ const shopifyProjects = [
     title: "Platform Migration Solution",
     description:
       "Successfully migrated complete e-commerce data including products, customers, and order history from legacy platform to Shopify with zero data loss.",
-    technologies: ["Matrixify App", "Data Migration", "Shopify Admin API", "CSV Processing"],
+    technologies: [
+      "Matrixify App",
+      "Data Migration",
+      "Shopify Admin API",
+      "CSV Processing",
+    ],
     liveUrl: "#",
     codeUrl: "#",
     hasLiveDemo: false,
@@ -67,7 +80,13 @@ const shopifyProjects = [
     title: "Multi-Platform Reviews System",
     description:
       "Implemented comprehensive product review systems using multiple review platforms, enabling verified customer reviews, photo uploads, and advanced review management.",
-    technologies: ["Doran App", "Okendo App", "Judge.me App", "Shopify Dawn Theme", "Liquid Templates"],
+    technologies: [
+      "Doran App",
+      "Okendo App",
+      "Judge.me App",
+      "Shopify Dawn Theme",
+      "Liquid Templates",
+    ],
     liveUrl: "#",
     codeUrl: "#",
     hasLiveDemo: false,
@@ -80,7 +99,12 @@ const shopifyProjects = [
     title: "Checkout Upsell Extension",
     description:
       "Developed a smart checkout extension that recommends similar products during the checkout process, increasing average order value by 25%.",
-    technologies: ["Shopify Liquid", "React.js", "GraphQL", "Checkout Extensions API"],
+    technologies: [
+      "Shopify Liquid",
+      "React.js",
+      "GraphQL",
+      "Checkout Extensions API",
+    ],
     liveUrl: "#",
     codeUrl: "https://github.com/maaz-usmani-dev/checkout-upsell",
     hasLiveDemo: false,
@@ -93,7 +117,12 @@ const shopifyProjects = [
     title: "Dynamic Mega Menu",
     description:
       "Created a fully dynamic and customizable mega menu system for Dawn theme with backend-driven content management and mobile-responsive design.",
-    technologies: ["Shopify Dawn Theme", "Liquid Templates", "Theme Customizer", "JavaScript"],
+    technologies: [
+      "Shopify Dawn Theme",
+      "Liquid Templates",
+      "Theme Customizer",
+      "JavaScript",
+    ],
     liveUrl: "#",
     codeUrl: "#",
     hasLiveDemo: false,
@@ -106,7 +135,13 @@ const shopifyProjects = [
     title: "Email Marketing Automation",
     description:
       "Built comprehensive email marketing campaigns with automated flows, customer segmentation, and A/B testing to boost customer retention and sales.",
-    technologies: ["Klaviyo App", "Mailchimp App", "Shopify Flow", "Email Templates", "Customer Analytics"],
+    technologies: [
+      "Klaviyo App",
+      "Mailchimp App",
+      "Shopify Flow",
+      "Email Templates",
+      "Customer Analytics",
+    ],
     liveUrl: "#",
     codeUrl: "#",
     hasLiveDemo: false,
@@ -119,7 +154,12 @@ const shopifyProjects = [
     title: "Product Bundles & Upsells",
     description:
       "Implemented intelligent product bundling system with dynamic pricing, cross-sell recommendations, and discount management to increase average order value.",
-    technologies: ["Bundler App", "Honey Comb Upsell App", "Shopify Scripts", "Liquid Logic"],
+    technologies: [
+      "Bundler App",
+      "Honey Comb Upsell App",
+      "Shopify Scripts",
+      "Liquid Logic",
+    ],
     liveUrl: "#",
     codeUrl: "#",
     hasLiveDemo: false,
@@ -132,7 +172,12 @@ const shopifyProjects = [
     title: "Advanced Product Options",
     description:
       "Created flexible product customization system allowing customers to personalize products with various options, add-ons, and conditional pricing.",
-    technologies: ["Easify Product Options App", "Custom JavaScript", "Shopify Variants API", "Dynamic Pricing"],
+    technologies: [
+      "Easify Product Options App",
+      "Custom JavaScript",
+      "Shopify Variants API",
+      "Dynamic Pricing",
+    ],
     liveUrl: "#",
     codeUrl: "#",
     hasLiveDemo: false,
@@ -145,7 +190,13 @@ const shopifyProjects = [
     title: "Wix to Shopify Migration",
     description:
       "Complete migration of products, customer data, and reviews from Wix platform to Shopify, preserving SEO rankings and implementing enhanced review system with Judge.me integration.",
-    technologies: ["Matrixify App", "Judge.me App", "Wix Export Tools", "SEO Migration", "Review Migration"],
+    technologies: [
+      "Matrixify App",
+      "Judge.me App",
+      "Wix Export Tools",
+      "SEO Migration",
+      "Review Migration",
+    ],
     liveUrl: "#",
     codeUrl: "#",
     hasLiveDemo: false,
@@ -153,7 +204,7 @@ const shopifyProjects = [
     category: "Platform Migration",
     featured: true,
   },
-]
+];
 
 const frontendProjects = [
   {
@@ -182,10 +233,10 @@ const frontendProjects = [
     category: "Web Application",
     featured: true,
   },
-]
+];
 
 // Constants
-const NAV_ITEMS = ["Home", "About", "Skills", "Projects", "Contact"]
+const NAV_ITEMS = ["Home", "About", "Skills", "Projects", "Contact"];
 const FLOATING_CODE_SNIPPETS = [
   '<div className="hero">',
   'const dev = "Maaz";',
@@ -193,7 +244,7 @@ const FLOATING_CODE_SNIPPETS = [
   "useEffect(() => {",
   ".hero { flex }",
   "{{ product }}",
-]
+];
 
 const HERO_NAME_CHARS = [
   "M",
@@ -216,25 +267,34 @@ const HERO_NAME_CHARS = [
   "a",
   "n",
   "i",
-]
+];
 
 export function Portfolio() {
-  const [activeTab, setActiveTab] = useState("shopify")
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
-  const [isLoaded, setIsLoaded] = useState(false)
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null)
-  const [selectedCategory, setSelectedCategory] = useState<string>("all")
+  const [activeTab, setActiveTab] = useState("shopify");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   // Memoized data
   const aboutFeatures = useMemo(
     () => [
-      { icon: <Zap className="w-4 h-4 sm:w-5 sm:h-5" />, text: "Performance Optimization Expert" },
-      { icon: <Palette className="w-4 h-4 sm:w-5 sm:h-5" />, text: "UI/UX Focused Development" },
-      { icon: <Rocket className="w-4 h-4 sm:w-5 sm:h-5" />, text: "Modern Web Technologies" },
+      {
+        icon: <Zap className="w-4 h-4 sm:w-5 sm:h-5" />,
+        text: "Performance Optimization Expert",
+      },
+      {
+        icon: <Palette className="w-4 h-4 sm:w-5 sm:h-5" />,
+        text: "UI/UX Focused Development",
+      },
+      {
+        icon: <Rocket className="w-4 h-4 sm:w-5 sm:h-5" />,
+        text: "Modern Web Technologies",
+      },
     ],
-    [],
-  )
+    []
+  );
 
   const contactInfo = useMemo(
     () => [
@@ -257,159 +317,169 @@ export function Portfolio() {
         href: "https://www.linkedin.com/in/usmani-maaz/",
       },
     ],
-    [],
-  )
+    []
+  );
 
   const categories = useMemo(() => {
-    const currentProjects = activeTab === "shopify" ? shopifyProjects : frontendProjects
-    const cats = ["all", ...new Set(currentProjects.map((p) => p.category))]
-    return cats
-  }, [activeTab])
+    const currentProjects =
+      activeTab === "shopify" ? shopifyProjects : frontendProjects;
+    const cats = ["all", ...new Set(currentProjects.map((p) => p.category))];
+    return cats;
+  }, [activeTab]);
 
   const filteredProjects = useMemo(() => {
-    const currentProjects = activeTab === "shopify" ? shopifyProjects : frontendProjects
-    if (selectedCategory === "all") return currentProjects
-    return currentProjects.filter((p) => p.category === selectedCategory)
-  }, [activeTab, selectedCategory])
+    const currentProjects =
+      activeTab === "shopify" ? shopifyProjects : frontendProjects;
+    if (selectedCategory === "all") return currentProjects;
+    return currentProjects.filter((p) => p.category === selectedCategory);
+  }, [activeTab, selectedCategory]);
 
   // Mobile detection
   const checkMobile = useCallback(() => {
-    setIsMobile(window.innerWidth < 768)
-  }, [])
+    setIsMobile(window.innerWidth < 768);
+  }, []);
 
   // Scroll handler
   const handleScroll = useCallback(() => {
     if (!isMobile) {
-      const scrolled = window.pageYOffset
-      const parallaxElements = document.querySelectorAll(".parallax")
+      const scrolled = window.pageYOffset;
+      const parallaxElements = document.querySelectorAll(".parallax");
 
       requestAnimationFrame(() => {
         parallaxElements.forEach((element) => {
-          const el = element as HTMLElement
-          const speed = Number.parseFloat(el.dataset.speed || "0.2")
-          el.style.transform = `translateY(${scrolled * speed}px)`
-        })
-      })
+          const el = element as HTMLElement;
+          const speed = Number.parseFloat(el.dataset.speed || "0.2");
+          el.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+      });
     }
-  }, [isMobile])
+  }, [isMobile]);
 
   // Navigation handler
   const handleNavClick = useCallback(
     (e: Event) => {
-      const target = e.target as HTMLAnchorElement
+      const target = e.target as HTMLAnchorElement;
       if (target.matches('a[href^="#"]')) {
-        e.preventDefault()
-        const targetId = target.getAttribute("href")?.substring(1)
+        e.preventDefault();
+        const targetId = target.getAttribute("href")?.substring(1);
         if (targetId) {
-          const element = document.getElementById(targetId)
+          const element = document.getElementById(targetId);
           if (element) {
-            const offsetTop = element.offsetTop - (isMobile ? 60 : 80)
+            const offsetTop = element.offsetTop - (isMobile ? 60 : 80);
             window.scrollTo({
               top: offsetTop,
               behavior: "smooth",
-            })
-            setMobileMenuOpen(false)
+            });
+            setMobileMenuOpen(false);
           }
         }
       }
     },
-    [isMobile],
-  )
+    [isMobile]
+  );
 
   useEffect(() => {
-    setIsLoaded(true)
-    checkMobile()
+    setIsLoaded(true);
+    checkMobile();
 
     const throttledScroll = () => {
-      requestAnimationFrame(handleScroll)
-    }
+      requestAnimationFrame(handleScroll);
+    };
 
-    window.addEventListener("resize", checkMobile, { passive: true })
-    document.addEventListener("click", handleNavClick, { passive: false })
-    window.addEventListener("scroll", throttledScroll, { passive: true })
+    window.addEventListener("resize", checkMobile, { passive: true });
+    document.addEventListener("click", handleNavClick, { passive: false });
+    window.addEventListener("scroll", throttledScroll, { passive: true });
 
     // Initialize animations
     const initAnimations = () => {
-      const chars = document.querySelectorAll(".hero-name .char")
+      const chars = document.querySelectorAll(".hero-name .char");
       chars.forEach((char, index) => {
-        const element = char as HTMLElement
-        element.style.opacity = "0"
-        element.style.transform = "translateY(20px)"
-        element.style.transition = `all 0.5s ease ${index * 0.02}s`
+        const element = char as HTMLElement;
+        element.style.opacity = "0";
+        element.style.transform = "translateY(20px)";
+        element.style.transition = `all 0.5s ease ${index * 0.02}s`;
 
         setTimeout(() => {
-          element.style.opacity = "1"
-          element.style.transform = "translateY(0)"
-        }, 50)
-      })
+          element.style.opacity = "1";
+          element.style.transform = "translateY(0)";
+        }, 50);
+      });
 
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              const element = entry.target as HTMLElement
+              const element = entry.target as HTMLElement;
 
               if (element.classList.contains("animate-on-scroll")) {
-                element.style.opacity = "1"
-                element.style.transform = "translateY(0)"
+                element.style.opacity = "1";
+                element.style.transform = "translateY(0)";
               }
 
               if (element.classList.contains("stagger-children")) {
-                const children = element.querySelectorAll(".stagger-item")
+                const children = element.querySelectorAll(".stagger-item");
                 children.forEach((child, index) => {
-                  const childEl = child as HTMLElement
+                  const childEl = child as HTMLElement;
                   setTimeout(() => {
-                    childEl.style.opacity = "1"
-                    childEl.style.transform = "translateY(0)"
-                  }, index * 50)
-                })
+                    childEl.style.opacity = "1";
+                    childEl.style.transform = "translateY(0)";
+                  }, index * 50);
+                });
               }
 
-              observer.unobserve(entry.target)
+              observer.unobserve(entry.target);
             }
-          })
+          });
         },
-        { threshold: 0.1, rootMargin: "0px 0px -30px 0px" },
-      )
+        { threshold: 0.1, rootMargin: "0px 0px -30px 0px" }
+      );
 
-      document.querySelectorAll(".animate-on-scroll, .stagger-children").forEach((el) => {
-        observer.observe(el)
-      })
-    }
+      document
+        .querySelectorAll(".animate-on-scroll, .stagger-children")
+        .forEach((el) => {
+          observer.observe(el);
+        });
+    };
 
-    const animationTimer = setTimeout(initAnimations, 50)
+    const animationTimer = setTimeout(initAnimations, 50);
 
     return () => {
-      window.removeEventListener("resize", checkMobile)
-      document.removeEventListener("click", handleNavClick)
-      window.removeEventListener("scroll", throttledScroll)
-      clearTimeout(animationTimer)
-    }
-  }, [checkMobile, handleNavClick, handleScroll])
+      window.removeEventListener("resize", checkMobile);
+      document.removeEventListener("click", handleNavClick);
+      window.removeEventListener("scroll", throttledScroll);
+      clearTimeout(animationTimer);
+    };
+  }, [checkMobile, handleNavClick, handleScroll]);
 
   // Reset project animations when tab changes
   useEffect(() => {
     const resetProjectAnimations = () => {
-      const staggerItems = document.querySelectorAll(".projects-grid .stagger-item")
+      const staggerItems = document.querySelectorAll(
+        ".projects-grid .stagger-item"
+      );
       staggerItems.forEach((item, index) => {
-        const element = item as HTMLElement
-        element.style.opacity = "0"
-        element.style.transform = "translateY(15px)"
+        const element = item as HTMLElement;
+        element.style.opacity = "0";
+        element.style.transform = "translateY(15px)";
 
         setTimeout(() => {
-          element.style.opacity = "1"
-          element.style.transform = "translateY(0)"
-        }, index * 50)
-      })
-    }
+          element.style.opacity = "1";
+          element.style.transform = "translateY(0)";
+        }, index * 50);
+      });
+    };
 
-    const timer = setTimeout(resetProjectAnimations, 25)
-    return () => clearTimeout(timer)
-  }, [activeTab, selectedCategory])
+    const timer = setTimeout(resetProjectAnimations, 25);
+    return () => clearTimeout(timer);
+  }, [activeTab, selectedCategory]);
 
   // Project Card Component
   const ProjectCard = useCallback(
-    ({ project }: { project: (typeof shopifyProjects)[0] | (typeof frontendProjects)[0] }) => (
+    ({
+      project,
+    }: {
+      project: (typeof shopifyProjects)[0] | (typeof frontendProjects)[0];
+    }) => (
       <div
         className="project-card bg-gradient-to-br from-gray-800/40 to-gray-900/40 rounded-xl overflow-hidden border border-orange-500/20 hover:border-orange-500/50 transition-all duration-300 group backdrop-blur-sm"
         onMouseEnter={() => setHoveredProject(project.id)}
@@ -474,15 +544,23 @@ export function Portfolio() {
           {(project.hasLiveDemo || project.hasCode) && (
             <div className="flex gap-2">
               {project.hasLiveDemo && (
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  className="flex-1 bg-gradient-to-r from-orange-500 to-red-500 text-center py-2 px-3 rounded-lg text-sm font-semibold hover:from-orange-600 hover:to-red-600 transition-all transform hover:scale-105 flex items-center justify-center gap-2"
-                  rel="noreferrer"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  Live Demo
-                </a>
+                <div className="relative flex-1 group">
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    className="w-full bg-gradient-to-r from-orange-600 to-red-500 text-center py-2 px-3 rounded-lg text-sm font-semibold hover:from-orange-700 hover:to-red-600 transition-all transform hover:scale-105 flex items-center justify-center gap-2 text-white"
+                    rel="noreferrer"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    Live Demo
+                  </a>
+                  {project.id === 1 && (
+                    <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-black border border-orange-400 text-orange-300 text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
+                      Use Password:{" "}
+                      <span className="font-semibold">lakreu</span>
+                    </div>
+                  )}
+                </div>
               )}
               {project.hasCode && (
                 <a
@@ -500,8 +578,8 @@ export function Portfolio() {
         </div>
       </div>
     ),
-    [hoveredProject],
-  )
+    [hoveredProject]
+  );
 
   if (!isLoaded) {
     return (
@@ -511,7 +589,7 @@ export function Portfolio() {
           <p className="text-gray-300">Loading Portfolio...</p>
         </div>
       </div>
-    )
+    );
   }
 
   return (
@@ -541,7 +619,11 @@ export function Portfolio() {
             className="md:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-orange-500/20 border border-orange-500/30 hover:bg-orange-500/30 transition-all duration-200"
             aria-label="Toggle mobile menu"
           >
-            {mobileMenuOpen ? <X className="w-5 h-5 text-orange-500" /> : <Menu className="w-5 h-5 text-orange-500" />}
+            {mobileMenuOpen ? (
+              <X className="w-5 h-5 text-orange-500" />
+            ) : (
+              <Menu className="w-5 h-5 text-orange-500" />
+            )}
           </button>
         </div>
 
@@ -587,21 +669,23 @@ export function Portfolio() {
 
         {/* Floating Code */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {FLOATING_CODE_SNIPPETS.slice(0, isMobile ? 4 : 6).map((code, index) => (
-            <div
-              key={index}
-              className="absolute bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/20 rounded-lg px-2 sm:px-3 py-1 sm:py-2 text-orange-400 font-mono text-xs sm:text-sm backdrop-blur-sm animate-float parallax"
-              data-speed={0.1}
-              style={{
-                left: `${15 + ((index * 15) % 70)}%`,
-                top: `${20 + ((index * 10) % 60)}%`,
-                animationDelay: `${index * 0.5}s`,
-                animationDuration: `${3 + (index % 2)}s`,
-              }}
-            >
-              {code}
-            </div>
-          ))}
+          {FLOATING_CODE_SNIPPETS.slice(0, isMobile ? 4 : 6).map(
+            (code, index) => (
+              <div
+                key={index}
+                className="absolute bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/20 rounded-lg px-2 sm:px-3 py-1 sm:py-2 text-orange-400 font-mono text-xs sm:text-sm backdrop-blur-sm animate-float parallax"
+                data-speed={0.1}
+                style={{
+                  left: `${15 + ((index * 15) % 70)}%`,
+                  top: `${20 + ((index * 10) % 60)}%`,
+                  animationDelay: `${index * 0.5}s`,
+                  animationDuration: `${3 + (index % 2)}s`,
+                }}
+              >
+                {code}
+              </div>
+            )
+          )}
         </div>
 
         <div className="text-center z-10 px-4 sm:px-6 max-w-4xl mx-auto">
@@ -626,17 +710,29 @@ export function Portfolio() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-md sm:max-w-none mx-auto">
             <button
-              onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() =>
+                document
+                  .getElementById("projects")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               className="px-6 sm:px-8 py-3 bg-gradient-to-r from-orange-500 via-red-500 to-yellow-500 rounded-full font-semibold hover:from-orange-600 hover:via-red-600 hover:to-yellow-600 transition-all transform hover:scale-105 text-sm sm:text-base min-h-[48px] flex items-center justify-center group"
             >
-              <span className="group-hover:mr-2 transition-all">View My Work</span>
+              <span className="group-hover:mr-2 transition-all">
+                View My Work
+              </span>
               <Rocket className="w-4 h-4 ml-2 group-hover:rotate-12 transition-transform" />
             </button>
             <button
-              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               className="px-6 sm:px-8 py-3 border-2 border-orange-500 rounded-full font-semibold hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-500 hover:border-transparent transition-all transform hover:scale-105 text-sm sm:text-base min-h-[48px] flex items-center justify-center group"
             >
-              <span className="group-hover:mr-2 transition-all">Get In Touch</span>
+              <span className="group-hover:mr-2 transition-all">
+                Get In Touch
+              </span>
               <Heart className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform" />
             </button>
           </div>
@@ -644,7 +740,10 @@ export function Portfolio() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gradient-to-b from-gray-900 to-black">
+      <section
+        id="about"
+        className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gradient-to-b from-gray-900 to-black"
+      >
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 lg:mb-16 bg-gradient-to-r from-orange-500 via-red-500 to-yellow-500 bg-clip-text text-transparent animate-on-scroll opacity-0 transform translate-y-5">
             About Me
@@ -652,14 +751,16 @@ export function Portfolio() {
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
             <div className="space-y-4 sm:space-y-6 animate-on-scroll opacity-0 transform translate-y-5 order-2 lg:order-1">
               <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
-                I'm a passionate Shopify Theme Developer and Frontend Engineer creating stunning, high-performance
-                e-commerce solutions. I specialize in building custom Shopify themes that drive conversions and provide
-                exceptional user experiences.
+                I'm a passionate Shopify Theme Developer and Frontend Engineer
+                creating stunning, high-performance e-commerce solutions. I
+                specialize in building custom Shopify themes that drive
+                conversions and provide exceptional user experiences.
               </p>
               <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
-                My expertise spans modern frontend technologies including React, JavaScript, HTML5, CSS3, and Shopify
-                Liquid. I'm dedicated to writing clean, maintainable code and staying current with web development
-                trends.
+                My expertise spans modern frontend technologies including React,
+                JavaScript, HTML5, CSS3, and Shopify Liquid. I'm dedicated to
+                writing clean, maintainable code and staying current with web
+                development trends.
               </p>
               <div className="space-y-3 sm:space-y-4 stagger-children">
                 {aboutFeatures.map((item, index) => (
@@ -700,7 +801,10 @@ export function Portfolio() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gradient-to-b from-black to-gray-900">
+      <section
+        id="projects"
+        className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gradient-to-b from-black to-gray-900"
+      >
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 lg:mb-16 bg-gradient-to-r from-orange-500 via-red-500 to-yellow-500 bg-clip-text text-transparent animate-on-scroll opacity-0 transform translate-y-5">
             My Projects
@@ -710,8 +814,8 @@ export function Portfolio() {
             <div className="flex bg-gradient-to-r from-gray-800/40 to-gray-900/40 rounded-full p-1 border border-orange-500/30 backdrop-blur-sm w-full max-w-md sm:max-w-none sm:w-auto">
               <button
                 onClick={() => {
-                  setActiveTab("shopify")
-                  setSelectedCategory("all")
+                  setActiveTab("shopify");
+                  setSelectedCategory("all");
                 }}
                 className={`flex-1 sm:flex-none px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-semibold transition-all duration-200 flex items-center justify-center gap-2 text-sm sm:text-base min-h-[44px] group ${
                   activeTab === "shopify"
@@ -728,8 +832,8 @@ export function Portfolio() {
               </button>
               <button
                 onClick={() => {
-                  setActiveTab("frontend")
-                  setSelectedCategory("all")
+                  setActiveTab("frontend");
+                  setSelectedCategory("all");
                 }}
                 className={`flex-1 sm:flex-none px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-semibold transition-all duration-200 flex items-center justify-center gap-2 text-sm sm:text-base min-h-[44px] group ${
                   activeTab === "frontend"
@@ -779,20 +883,28 @@ export function Portfolio() {
           <div className="mt-12 text-center">
             <p className="text-gray-400 text-sm">
               Showing {filteredProjects.length} of{" "}
-              {(activeTab === "shopify" ? shopifyProjects : frontendProjects).length} projects
+              {
+                (activeTab === "shopify" ? shopifyProjects : frontendProjects)
+                  .length
+              }{" "}
+              projects
             </p>
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gradient-to-b from-gray-900 to-black">
+      <section
+        id="contact"
+        className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gradient-to-b from-gray-900 to-black"
+      >
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-orange-500 via-red-500 to-yellow-500 bg-clip-text text-transparent animate-on-scroll opacity-0 transform translate-y-5">
             Let's Work Together
           </h2>
           <p className="text-lg sm:text-xl text-gray-300 mb-8 sm:mb-10 lg:mb-12 animate-on-scroll opacity-0 transform translate-y-3 max-w-2xl mx-auto leading-relaxed">
-            Ready to bring your Shopify store to life? Let's create something amazing together.
+            Ready to bring your Shopify store to life? Let's create something
+            amazing together.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 stagger-children">
@@ -827,5 +939,5 @@ export function Portfolio() {
         </div>
       </section>
     </div>
-  )
+  );
 }
