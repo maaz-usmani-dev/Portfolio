@@ -670,21 +670,43 @@ export function Portfolio() {
         {/* Floating Code */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {FLOATING_CODE_SNIPPETS.slice(0, isMobile ? 4 : 6).map(
-            (code, index) => (
-              <div
-                key={index}
-                className="absolute bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/20 rounded-lg px-2 sm:px-3 py-1 sm:py-2 text-orange-400 font-mono text-xs sm:text-sm backdrop-blur-sm animate-float parallax"
-                data-speed={0.1}
-                style={{
-                  left: `${25 + ((index * 20) % 60)}%`,
-                  top: `${30 + ((index * 15) % 50)}%`,
-                  animationDelay: `${index * 0.5}s`,
-                  animationDuration: `${3 + (index % 2)}s`,
-                }}
-              >
-                {code}
-              </div>
-            )
+            (code, index) => {
+              // Calculate positions to avoid overlap with name
+              const nameWidth = 300; // Approximate width of the name in pixels
+              const nameHeight = 100; // Approximate height of the name in pixels
+              const nameLeft = 50 - nameWidth / 2; // Centered horizontally
+              const nameTop = 50 - nameHeight / 2; // Centered vertically
+
+              let left = 25 + ((index * 20) % 60);
+              let top = 30 + ((index * 15) % 50);
+
+              // Adjust position to avoid overlapping with name
+              if (
+                left > nameLeft &&
+                left < nameLeft + nameWidth &&
+                top > nameTop &&
+                top < nameTop + nameHeight
+              ) {
+                left = left > 50 ? 10 : 90; // Move to left or right edge
+                top = top > 50 ? 10 : 90; // Move to top or bottom edge
+              }
+
+              return (
+                <div
+                  key={index}
+                  className="absolute bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/20 rounded-lg px-2 sm:px-3 py-1 sm:py-2 text-orange-400 font-mono text-xs sm:text-sm backdrop-blur-sm animate-float parallax"
+                  data-speed={0.1}
+                  style={{
+                    left: `${left}%`,
+                    top: `${top}%`,
+                    animationDelay: `${index * 0.5}s`,
+                    animationDuration: `${3 + (index % 2)}s`,
+                  }}
+                >
+                  {code}
+                </div>
+              );
+            }
           )}
         </div>
 
