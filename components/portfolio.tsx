@@ -492,7 +492,7 @@ export function Portfolio() {
           </div>
         )}
 
-        <div className="h-32 sm:h-36 bg-gradient-to-r from-orange-500 to-pink-500 flex items-center justify-center relative">
+        <div className="h-32 sm:h-36 flex items-center justify-center relative" style="background: linear-gradient(135deg, #FF6B6B, #F9A826)">
           <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300" />
           <span className="text-lg sm:text-xl font-bold relative z-10 text-white group-hover:scale-105 transition-transform duration-300">
             {project.title.split(" ")[0]}
